@@ -6,7 +6,7 @@ class Header extends Component {
       <header className="profile">
         <div className="left">{this.props.back ? (<i class="fas fa-chevron-left"></i>) : '' }</div>
         <div className="center">MyAmica</div>
-        <div className="right"></div>
+        <div className="right"><div></div></div>
       </header>
     ) : (
       <header className="noprofile">

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Phone from '../components/Phone';
 import Header from '../components/Header';
-import Register from '../components/Register';
+import Wall from '../components/Wall';
 
 class Home extends Component {
   render() {
     return (
       <div>
-        <Header back={false} profile={false} />
-        <Register />
+        <Header back={false} profile={true} />
+        <Wall />
       </div>
     );
   }

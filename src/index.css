@@ -59,7 +59,16 @@ header.profile > div.right {
   height: 30px;
   width: 30px;
   border-radius: 50px;
-  background: #999;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header.profile > div.right > div {
+  height: 18px;
+  width: 18px;
+  background-image: url('/profilepicture.png');
+  background-size: cover;
 }
 
 header.profile > div.left {
@@ -69,4 +78,8 @@ header.profile > div.left {
 header.profile > div.left i.fa-chevron-left {
   line-height: 30px;
   font-size: 18px;
+}
+
+div.ui.input {
+  text-align: center;
 }
