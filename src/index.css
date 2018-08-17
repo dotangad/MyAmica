@@ -41,9 +41,9 @@ body {
 header {
   height: 50px;
   width: 280px;
-  -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.05);
-  -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.05);
-  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.05);
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.05);
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.05);
+  box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.05);
   display: flex;
   align-items: center;
 }
@@ -82,4 +82,55 @@ header.profile > div.left i.fa-chevron-left {
 
 div.ui.input {
   text-align: center;
+}
+
+body ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+  height: 6px;
+}
+
+div.post {
+  width: 100%;
+  padding: 10px 20px;
+}
+div.post:first-child > div.post-title {
+  border-top: none;
+}
+div.post-title {
+  border-top: 1px solid #666;
+  padding: 15px 0;
+  padding-bottom: 3px;
+  font-size: 20px;
+  color: #2977f5;
+  font-weight: 500;
+}
+div.post-date {
+  color: #444;
+  text-transform: uppercase;
+  font-size: 10px;
+  padding-bottom: 7px;
+}
+div.post-tags {
+  width: 240px;
+  padding-bottom: 7px;
+}
+div.post-tags {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+div.post-tags > span.tag {
+  cursor: pointer;
+  font-size: 11px;
+  padding: 0 4px;
+  margin: 2px 2px;
+  border: 1px solid #2977f5;
+  border-radius: 40px;
+}
+div.post-content {
+  font-size: 13px;
+}
+div.post:last-child {
+  margin-bottom: 50px;
 }

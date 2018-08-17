@@ -15,6 +15,11 @@ export default () => (
       <Route exact path="/login" render={props => (<Login />)}/>
       <Route exact path="/wall" render={props => (<Wall />)}/>
       {/* <Route exact path="/profile" render={props => (<Wall />)}/> */}
+      {/* <Route exact path="/followtags" render={props => (<Wall />)}/> */}
+      {/* <Route exact path="/chat" render={props => (<Wall />)}/> */}
+      {/* <Route exact path="/psych" render={props => (<Wall />)}/> */}
+      {/* <Route exact path="/post" render={props => (<Wall />)}/> */}
+      {/* <Route exact path="/questionare" render={props => (<Wall />)}/> */}
     </Switch>
   </BrowserRouter>
 );
