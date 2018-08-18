@@ -22,5 +22,5 @@ export function addPost(title, tags, content) {
   fire
     .database()
     .ref("posts")
-    .onWrite(e => window.location.assign('wall'));
+    .on('child_added', () => window.location.assign('wall'));
 }
