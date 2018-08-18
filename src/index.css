@@ -134,3 +134,21 @@ div.post-content {
 div.post:last-child {
   margin-bottom: 50px;
 }
+div.pm-button button {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 100%;
+  border: 2px solid #2977f5;
+  background: #2977f5;
+  color: white;
+  padding: 10px 0;
+  font-family: 'Avenir', 'Segoe UI', 'Ubuntu';
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+}
+div.pm-button button i {
+  margin-left: 5px;
+  transform: scale(1.1);
+}

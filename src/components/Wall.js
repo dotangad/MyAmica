@@ -26,7 +26,7 @@ class Post extends Component {
         </div>
         <div className="post-content">{this.props.content}</div>
         <div className="pm-button">
-          
+          <button>Chat <i class="fas fa-comments"></i></button>
         </div>
       </div>
     );
