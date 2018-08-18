@@ -24,14 +24,6 @@ class Profile extends Component {
         }}>
           Angad Singh
         </h1>
-        <h4 style={{
-          textAlign: 'center',
-          padding: '3px 0',
-          fontSize: '12px',
-          marginTop: '0px',
-          fontWeight: 'lighter',
-          color: 'green'
-        }}>1,024 ConciPoints</h4>
         <div className="profilelist" style={{marginBottom: '20px'}}>
           <div className="profileoption">
             <div className="icon"><i class="fas fa-sign-out-alt"></i></div>

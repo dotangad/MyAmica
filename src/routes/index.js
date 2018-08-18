@@ -10,6 +10,7 @@ import Wall from './Wall';
 import Profile from './Profile';
 import FollowTags from './FollowTags';
 import Post from './Post';
+import Chat from './Chat';
 
 export default () => (
   <BrowserRouter>
@@ -20,7 +21,7 @@ export default () => (
       <Route exact path="/profile" render={props => (<Profile />)}/>
       <Route exact path="/followtags" render={props => (<FollowTags />)}/>
       <Route exact path="/post" render={props => (<Post />)}/> /
-      {/* <Route exact path="/chat" render={props => (<Wall />)}/> */}
+      <Route exact path="/chat" render={props => (<Chat />)}/>
       {/* <Route exact path="/questionare" render={props => (<Wall />)}/> */}
       {/* <Route exact path="/psych" render={props => (<Wall />)}/> */}
     </Switch>

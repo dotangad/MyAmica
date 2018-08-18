@@ -2,14 +2,6 @@ import React, { Component } from "react";
 import Drawer from './Drawer';
 import {fire} from '../helpers';
 
-let posts = [
-  {title: 'title 1', date: 'two days ago', tags: ['tagone', 'tagtwo', 'tagthree', 'tagfour', 'tagfive', 'tagsix'], content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque ipsa excepturi consequuntur, saepe sunt natus sint explicabo ut beatae molestias autem, error, quod mollitia neque esse nulla aliquam deleniti temporibus!'},
-  {title: 'title 1', date: 'two days ago', tags: ['tagone', 'tagtwo', 'tagthree', 'tagfour', 'tagfive', 'tagsix'], content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque ipsa excepturi consequuntur, saepe sunt natus sint explicabo ut beatae molestias autem, error, quod mollitia neque esse nulla aliquam deleniti temporibus!'},
-  {title: 'title 1', date: 'two days ago', tags: ['tagone', 'tagtwo', 'tagthree', 'tagfour', 'tagfive', 'tagsix'], content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque ipsa excepturi consequuntur, saepe sunt natus sint explicabo ut beatae molestias autem, error, quod mollitia neque esse nulla aliquam deleniti temporibus!'},
-  {title: 'title 1', date: 'two days ago', tags: ['tagone', 'tagtwo', 'tagthree', 'tagfour', 'tagfive', 'tagsix'], content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque ipsa excepturi consequuntur, saepe sunt natus sint explicabo ut beatae molestias autem, error, quod mollitia neque esse nulla aliquam deleniti temporibus!'},
-  {title: 'title 1', date: 'two days ago', tags: ['tagone', 'tagtwo', 'tagthree', 'tagfour', 'tagfive', 'tagsix'], content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque ipsa excepturi consequuntur, saepe sunt natus sint explicabo ut beatae molestias autem, error, quod mollitia neque esse nulla aliquam deleniti temporibus!'},
-];
-
 class Post extends Component {
   render() {
     return (
@@ -41,11 +33,13 @@ class Wall extends Component {
   componentWillMount() {
     const postsRef = fire.database().ref('posts');
     postsRef.on('child_added', snapshot => {
+      console.log(snapshot.val());
       this.setState(prevState => {return {posts: prevState.posts.concat(snapshot.val())}});
     });
   }
 
   render() {
+    this.state.posts.reverse();
     return (
       <div
         className="register"

@@ -273,3 +273,6 @@ div.drawer > div.section > div.label {
   padding-bottom: 7px;
   text-transform: uppercase;
 }
+input[type="text"]:focus {
+  outline: none;
+}

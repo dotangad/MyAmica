@@ -14,13 +14,9 @@ export function addPost(title, tags, content) {
   post.title = title;
   post.tags = tags;
   post.content = content;
-  console.log(fire, fire.database(), fire.database().ref('posts'));
+  // console.log(fire, fire.database(), fire.database().ref('posts'));
   fire
     .database()
     .ref("posts")
     .push(post);
-  fire
-    .database()
-    .ref("posts")
-    .on('child_added', () => window.location.assign('wall'));
 }

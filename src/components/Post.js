@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Input, Button, Form, TextArea } from "semantic-ui-react";
 import Drawer from "./Drawer";
-import {addPost, fire} from '../helpers';
+import { fire } from "../helpers";
 
 const input = {
   display: "block",
@@ -59,7 +59,7 @@ class Post extends Component {
           />
           <TextArea
             onChange={e => this.setState({ content: e.target.value })}
-            style={{...input, fontFamily: 'Avenir, Segoe UI, Ubuntu'}}
+            style={{ ...input, fontFamily: "Avenir, Segoe UI, Ubuntu" }}
             placeholder="Content"
           />
           <h1
@@ -86,10 +86,7 @@ class Post extends Component {
                   if (this.state.tags.indexOf(tag) != -1) {
                     this.setState(prevState => {
                       const tags = prevState.tags;
-                      tags.splice(
-                        prevState.tags.indexOf(tag),
-                        1
-                      );
+                      tags.splice(prevState.tags.indexOf(tag), 1);
                       return { tags };
                     });
                   } else {
@@ -112,7 +109,16 @@ class Post extends Component {
               margin: "20px auto"
             }}
             primary
-            onClick={() => addPost(this.state.title, this.state.tags, this.state.content)}
+            onClick={() =>
+              fire
+                .database()
+                .ref("posts")
+                .push({
+                  title: this.state.title,
+                  tags: this.state.tags,
+                  content: this.state.content
+                })
+            }
           >
             Post
           </Button>
