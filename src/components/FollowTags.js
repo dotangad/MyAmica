@@ -40,7 +40,7 @@ class Profile extends Component {
           ))}
         </div>
         {this.state.selected >= 3 ? (
-          <div className="proceed" onClick={() => window.location.assign('wall')}><span>proceed</span></div>
+          <div className="proceed" onClick={() => window.location.assign('login')}><span>proceed</span></div>
         ) : ''}
       </div>
     );

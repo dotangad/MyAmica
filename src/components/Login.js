@@ -28,8 +28,8 @@ class Login extends Component {
         }}>
           Login
         </h1>
-        <Input onChange={e => this.setState({email: e.target.value})} style={input} placeholder="Email" />
-        <Input onChange={e => this.setState({password: e.target.value})} style={input} placeholder="Password" type="password"/>
+        <Input style={input} placeholder="Email" />
+        <Input style={input} placeholder="Password" type="password"/>
         <Button style={{
           display: 'block',
           margin: '20px auto',

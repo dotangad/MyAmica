@@ -28,13 +28,13 @@ class Register extends Component {
         }}>
           Register
         </h1>
-        <Input onChange={e => this.setState({name: e.target.value})} style={input} placeholder="Full name" />
-        <Input onChange={e => this.setState({email: e.target.value})} style={input} placeholder="Email" />
-        <Input onChange={e => this.setState({password: e.target.value})} style={input} placeholder="Password" type="password"/>
+        <Input style={input} placeholder="Full name" />
+        <Input style={input} placeholder="Email" />
+        <Input style={input} placeholder="Password" type="password"/>
         <Button style={{
           display: 'block',
           margin: '20px auto',
-        }} primary onClick={() => window.location.assign('login')}>Register</Button>
+        }} primary onClick={() => window.location.assign('followtags')}>Register</Button>
         </div>
       </div>
     );

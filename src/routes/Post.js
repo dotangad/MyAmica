@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Phone from '../components/Phone';
 import Header from '../components/Header';
-import FollowTags from '../components/FollowTags';
+import Post from '../components/Post';
 
 class Home extends Component {
   render() {
     return (
       <div>
-        <Header back={true} backlink={'/'} profile={false} />
-        <FollowTags />
+        <Header back={true} backlink={'wall'} profile={false} />
+        <Post />
       </div>
     );
   }
