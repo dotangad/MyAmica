@@ -1,10 +1,17 @@
 import React, { Component } from "react";
-import { Input, Button } from "semantic-ui-react";
 
 const input = {
   display: "block",
   margin: "20px auto"
 };
+
+let posts = [
+  {title: 'title 1', date: 'two days ago', tags: ['tagone', 'tagtwo', 'tagthree', 'tagfour', 'tagfive', 'tagsix'], content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque ipsa excepturi consequuntur, saepe sunt natus sint explicabo ut beatae molestias autem, error, quod mollitia neque esse nulla aliquam deleniti temporibus!'},
+  {title: 'title 1', date: 'two days ago', tags: ['tagone', 'tagtwo', 'tagthree', 'tagfour', 'tagfive', 'tagsix'], content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque ipsa excepturi consequuntur, saepe sunt natus sint explicabo ut beatae molestias autem, error, quod mollitia neque esse nulla aliquam deleniti temporibus!'},
+  {title: 'title 1', date: 'two days ago', tags: ['tagone', 'tagtwo', 'tagthree', 'tagfour', 'tagfive', 'tagsix'], content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque ipsa excepturi consequuntur, saepe sunt natus sint explicabo ut beatae molestias autem, error, quod mollitia neque esse nulla aliquam deleniti temporibus!'},
+  {title: 'title 1', date: 'two days ago', tags: ['tagone', 'tagtwo', 'tagthree', 'tagfour', 'tagfive', 'tagsix'], content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque ipsa excepturi consequuntur, saepe sunt natus sint explicabo ut beatae molestias autem, error, quod mollitia neque esse nulla aliquam deleniti temporibus!'},
+  {title: 'title 1', date: 'two days ago', tags: ['tagone', 'tagtwo', 'tagthree', 'tagfour', 'tagfive', 'tagsix'], content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque ipsa excepturi consequuntur, saepe sunt natus sint explicabo ut beatae molestias autem, error, quod mollitia neque esse nulla aliquam deleniti temporibus!'},
+];
 
 class Post extends Component {
   render() {
@@ -14,7 +21,7 @@ class Post extends Component {
         <div className="post-date">{this.props.date}</div>
         <div className="post-tags">
         {this.props.tags.map(tag => (
-          <span className="tag"> #{tag} </span>
+          <span key={this.props.tags.indexOf(tag)} className="tag"> {tag} </span>
         ))}
         </div>
         <div className="post-content">{this.props.content}</div>
@@ -44,24 +51,9 @@ class Wall extends Component {
           height: "380px",
           // border: '1px solid red',
         }}>
-          <Post
-            title="jhask"
-            date="an hour ago"
-            tags={['hello', 'hellotwo', 'dpsrkp', 'hellothree', 'hello', 'hellotwo', 'dpsrkp', 'hellothree']}
-            content='hahaha teri ma ki chut hahaha tera baap chakka skgjd ajdhsfgb sjhgfd jahdfg'
-            />
-            <Post
-            title="jhask"
-            date="an hour ago"
-            tags={['hello', 'hellotwo', 'dpsrkp', 'hellothree', 'hello', 'hellotwo', 'dpsrkp', 'hellothree']}
-            content='hahaha teri ma ki chut hahaha tera baap chakka skgjd ajdhsfgb sjhgfd jahdfg'
-            />
-            <Post
-            title="jhask"
-            date="an hour ago"
-            tags={['hello', 'hellotwo', 'dpsrkp', 'hellothree', 'hello', 'hellotwo', 'dpsrkp', 'hellothree']}
-            content='hahaha teri ma ki chut hahaha tera baap chakka skgjd ajdhsfgb sjhgfd jahdfg'
-            />
+        {posts.map(post => (
+          <Post {...post} />
+        ))}
         </div>
       </div>
     );
