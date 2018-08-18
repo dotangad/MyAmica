@@ -7,7 +7,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Header back={true} backlink={'wall'} profile={false} />
+        <Header back={true} backlink={'wall'} profile={true} />
         <Post />
       </div>
     );

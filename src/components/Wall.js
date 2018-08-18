@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Drawer from './Drawer';
+import {fire} from '../helpers';
 
 let posts = [
   {title: 'title 1', date: 'two days ago', tags: ['tagone', 'tagtwo', 'tagthree', 'tagfour', 'tagfive', 'tagsix'], content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque ipsa excepturi consequuntur, saepe sunt natus sint explicabo ut beatae molestias autem, error, quod mollitia neque esse nulla aliquam deleniti temporibus!'},
@@ -21,7 +23,7 @@ class Post extends Component {
         </div>
         <div className="post-content">{this.props.content}</div>
         <div className="pm-button">
-          <button>Chat <i class="fas fa-comments"></i></button>
+          <button>Chat <i className="fas fa-comments"></i></button>
         </div>
       </div>
     );
@@ -29,6 +31,20 @@ class Post extends Component {
 }
 
 class Wall extends Component {
+  constructor() {
+    super();
+    this.state = {
+      posts: []
+    }
+  }
+
+  componentWillMount() {
+    const postsRef = fire.database().ref('posts');
+    postsRef.on('child_added', snapshot => {
+      this.setState(prevState => {return {posts: prevState.posts.concat(snapshot.val())}});
+    });
+  }
+
   render() {
     return (
       <div
@@ -46,10 +62,11 @@ class Wall extends Component {
           height: "380px",
           // border: '1px solid red',
         }}>
-        {posts.map(post => (
+        {this.state.posts.map(post => (
           <Post {...post} />
         ))}
         </div>
+        <Drawer />
       </div>
     );
   }

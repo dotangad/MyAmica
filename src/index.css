@@ -236,3 +236,40 @@ div.proceed {
   letter-spacing: 1.3px;
   cursor: pointer;
 }
+
+div.drawer {
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  background: white;
+  border-top: 0.7px solid #2977f5;
+  justify-content: space-around;
+  align-items: center;
+}
+div.drawer > div.section {
+  height: 50px;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+div.drawer > div.section > div.icon {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.drawer > div.section > div.icon > i {
+  transform: scale(1.1);
+}
+div.drawer > div.section > div.label {
+  height: 20px;
+  line-height: 13px;
+  font-size: 11px;
+  padding-bottom: 7px;
+  text-transform: uppercase;
+}

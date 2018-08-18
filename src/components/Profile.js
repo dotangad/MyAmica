@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import {getUser} from '../helpers';
+import Drawer from './Drawer';
 
 class Profile extends Component {
   render() {
@@ -10,7 +10,7 @@ class Profile extends Component {
           overflowX: 'hidden',
           overflowY: 'auto',
           width: "100%",
-          height: "450px"
+          height: "400px"
         }}
       >
         <div className="bigprofileimg"><div></div></div>
@@ -32,7 +32,7 @@ class Profile extends Component {
           fontWeight: 'lighter',
           color: 'green'
         }}>1,024 ConciPoints</h4>
-        <div className="profilelist">
+        <div className="profilelist" style={{marginBottom: '20px'}}>
           <div className="profileoption">
             <div className="icon"><i class="fas fa-sign-out-alt"></i></div>
             <div className="label">Logout</div>
@@ -46,6 +46,7 @@ class Profile extends Component {
             <div className="label">Change password</div>
           </div>
         </div>
+        <Drawer />
       </div>
     );
   }
