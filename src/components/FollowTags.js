@@ -3,6 +3,13 @@ import React, { Component } from "react";
 const tags = ['sad','badday','academicfailure','stress','parentalabuse','depression','testanxiety','anxiety','socialanxiety','selfloathing','suicidal','distressed','broken'];
 
 class Profile extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selected: 0
+    }
+  }
+
   render() {
     return (
       <div
@@ -22,13 +29,19 @@ class Profile extends Component {
           fontSize: '17px',
           fontWeight: 'lighter'
         }}>
-          Select tags which you would like to follow:
+          Select at least 3 tags which you would like to follow:
         </h1>
         <div className="followtags">
           {tags.map(tag => (
-            <div className="followtag" key={tags.index} onClick={e => e.target.classList.toggle('clicked')}> {tag} </div>
+            <div className="followtag" key={tags.index} onClick={e => {
+              e.target.classList.toggle('clicked');
+              this.setState(prevState => {return {selected: prevState.selected + 1}});
+            }}> {tag} </div>
           ))}
         </div>
+        {this.state.selected >= 3 ? (
+          <div className="proceed" onClick={() => window.location.assign('wall')}><span>proceed</span></div>
+        ) : ''}
       </div>
     );
   }

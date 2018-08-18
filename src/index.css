@@ -218,3 +218,21 @@ div.followtags > div.followtag.clicked {
   background: #2977f5;
   color: white;
 }
+
+div.proceed {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background: #2977f5;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1.3px;
+  cursor: pointer;
+}
