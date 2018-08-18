@@ -15,7 +15,7 @@ class Post extends Component {
         </div>
         <div className="post-content">{this.props.content}</div>
         <div className="pm-button">
-          <button>Chat <i className="fas fa-comments"></i></button>
+          <button onClick={() => window.location.assign('chat')}>Chat <i className="fas fa-comments"></i></button>
         </div>
       </div>
     );

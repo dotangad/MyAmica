@@ -2,18 +2,52 @@ import React, { Component } from "react";
 import Drawer from "./Drawer";
 import { fire } from "../helpers";
 
-class History extends Component {
+function checkOther(chat) {
+  const uid = localStorage.getItem('userID');
+  return chat.user != uid ? true : false;
+}
+
+class ChatBubble extends Component {
   render() {
+    return (
+      <div className={this.props.other ? "chatbubble opp" : "chatbubble my"}>
+        <span>{this.props.message}</span>
+      </div>
+    );
+  }
+}
+
+class History extends Component {
+  constructor() {
+    super();
+    this.state = {
+      chats: []
+    };
+  }
+
+  componentWillMount() {
+    const chatRef = fire.database().ref('chats');
+    chatRef.on('child_added', s => this.setState(ps => {
+      return {chats: ps.chats.concat(s.val())}
+    }));
+  }
+
+  render() {
+    // this.state.chats.reverse();
+    const myUserID = localStorage.getItem('userID');
+    console.log(myUserID);
+    console.log(this.state.chats);
     return (
       <div
         style={{
           overflowX: "hidden",
           overflowY: "auto",
           width: "100%",
-          height: "350px"
+          height: "350px",
+          padding: "10px"
         }}
       >
-        test
+      {this.state.chats.map(chat => (<ChatBubble key={this.state.chats.indexOf(chat)} other={checkOther(chat)} message={chat.msg} />))}
       </div>
     );
   }
@@ -35,7 +69,7 @@ class ChatInput extends Component {
           alignItems: "center"
         }}
       >
-        <input
+        <input id="msg"
           onChange={this.props.onChange}
           style={{
             marginLeft: "5%",
@@ -71,11 +105,12 @@ class Post extends Component {
   }
 
   onChange = e => {
-    this.setState({ msg: e.target.value });
+    
   };
   onSubmit = e => {
     const user = localStorage.getItem("userID");
-    const { msg } = this.state;
+    const msg = e.target.parentNode.childNodes[0].value;
+    e.target.parentNode.childNodes[0].value = '';
     fire
       .database()
       .ref("chats")
@@ -88,7 +123,7 @@ class Post extends Component {
         className="register"
         style={{
           overflowX: "hidden",
-          overflowY: "auto",
+          overflowY: "hidden",
           width: "100%",
           height: "400px"
         }}

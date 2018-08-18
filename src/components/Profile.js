@@ -25,7 +25,7 @@ class Profile extends Component {
           Angad Singh
         </h1>
         <div className="profilelist" style={{marginBottom: '20px'}}>
-          <div className="profileoption">
+          <div className="profileoption" onClick={() => window.location.assign('/')}>
             <div className="icon"><i class="fas fa-sign-out-alt"></i></div>
             <div className="label">Logout</div>
           </div>

@@ -276,3 +276,34 @@ div.drawer > div.section > div.label {
 input[type="text"]:focus {
   outline: none;
 }
+
+div.chatbubble {
+  height: 30px;
+  width: 100%;
+  line-height: 15px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin: 3px 0;
+}
+div.chatbubble.opp {
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+div.chatbubble.opp > span {
+  padding: 7.5px 12px;
+  background: #aaa;
+  border-radius: 100px;
+}
+div.chatbubble.my {
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+}
+div.chatbubble.my > span {
+  padding: 7.5px 12px;
+  background: #2977f5;
+  color: white;
+  border-radius: 100px;
+}
