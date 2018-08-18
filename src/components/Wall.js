@@ -1,10 +1,5 @@
 import React, { Component } from "react";
 
-const input = {
-  display: "block",
-  margin: "20px auto"
-};
-
 let posts = [
   {title: 'title 1', date: 'two days ago', tags: ['tagone', 'tagtwo', 'tagthree', 'tagfour', 'tagfive', 'tagsix'], content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque ipsa excepturi consequuntur, saepe sunt natus sint explicabo ut beatae molestias autem, error, quod mollitia neque esse nulla aliquam deleniti temporibus!'},
   {title: 'title 1', date: 'two days ago', tags: ['tagone', 'tagtwo', 'tagthree', 'tagfour', 'tagfive', 'tagsix'], content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque ipsa excepturi consequuntur, saepe sunt natus sint explicabo ut beatae molestias autem, error, quod mollitia neque esse nulla aliquam deleniti temporibus!'},
